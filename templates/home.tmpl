@@ -1,0 +1,15 @@
+{{template "base/head" .}}
+<div role="main" aria-label="{{ctx.Locale.Tr "home"}}" class="page-content home bitnp-home">
+	<section class="bitnp-landing" aria-labelledby="bitnp-home-title">
+		<img class="bitnp-landing-logo" src="{{AssetUrlPrefix}}/img/logo.svg" width="112" height="112" alt="">
+		<h1 id="bitnp-home-title">{{AppDisplayName}}</h1>
+		<p>网协的代码托管与项目协作平台</p>
+		<div class="bitnp-landing-actions">
+			<a class="ui primary button" href="{{AppSubUrl}}/explore/repos">浏览项目</a>
+			{{if not .IsSigned}}
+				<a class="ui button" href="{{AppSubUrl}}/user/login" rel="nofollow">{{ctx.Locale.Tr "sign_in"}}</a>
+			{{end}}
+		</div>
+	</section>
+</div>
+{{template "base/footer" .}}
